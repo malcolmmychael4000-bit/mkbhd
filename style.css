@@ -1,0 +1,466 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Barlow', Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+  color: black;
+  background-color: #e9eaee;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+h2, 
+h3 {
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 1.05;
+}
+
+.btn {
+  display: inline-block;
+  padding: 7px 32px;
+  background-color: crimson;
+  color: white;
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: uppercase;
+  clip-path: polygon(12% 0, 100% 0, 88% 100%, 0 100%);
+}
+
+.btn:hover {
+  background-color: firebrick;
+}
+
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: 58px;
+  padding: 0 23px;
+  color: white;
+  background: linear-gradient(to bottom, black, transparent);
+}
+
+.site-header.solid {
+  position: fixed;
+  background: black;
+}
+
+.header-socials {
+  display: flex;
+  gap: 24px;
+  font-size: 18px;
+}
+
+.logo img {
+  height: 37px;
+  /* the logo file is dark on white, so flip it to white on black */
+  filter: grayscale(1) invert(1);
+  mix-blend-mode: screen;
+}
+ 
+.main-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 19px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+ 
+.cart {
+  font-size: 19px;
+  margin-left: 4px;
+}
+ 
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+ 
+/* ---------- HERO ---------- */
+.hero {
+  position: relative;
+  height: 585px;
+}
+ 
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+ 
+.hero-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 59px;
+  transform: translateX(-50%);
+}
+ 
+.dots {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 13px;
+}
+ 
+.dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: lightgray;
+  opacity: 0.8;
+}
+ 
+.dots span.active {
+  background-color: crimson;
+  opacity: 1;
+}
+ 
+/* ---------- THE CORE FOUR ---------- */
+.core-four {
+  padding: 45px 35px 60px;
+}
+ 
+.core-four h2 {
+  text-align: center;
+  margin-bottom: 45px;
+}
+ 
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 23px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+ 
+/* ---------- PRODUCT CARDS (used in two places) ---------- */
+.product-card {
+  position: relative;
+  display: block;
+  background-color: white;
+  padding: 12px 12px 18px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+ 
+.product-card img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+ 
+.product-card h3 {
+  font-size: 26px;
+  line-height: 1.1;
+  margin-top: 14px;
+}
+ 
+.product-card p {
+  font-size: 19px;
+  margin-top: 8px;
+}
+ 
+.product-card:hover {
+  transform: scale(1.08);
+  z-index: 2;
+}
+ 
+.product-card:hover h3 {
+  color: dimgray;
+}
+ 
+/* ---------- OUR PROCESS ---------- */
+.process {
+  background-color: black;
+  color: white;
+  padding: 65px 20px 70px;
+}
+ 
+.process h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+ 
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 23px;
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+}
+ 
+.process-item img {
+  width: 100%;
+  aspect-ratio: 489 / 457;
+  object-fit: cover;
+}
+ 
+.process-item h3 {
+  font-size: 28px;
+  margin: 24px 0 12px;
+}
+ 
+.process-item p {
+  font-weight: 500;
+  line-height: 1.7;
+}
+ 
+/* ---------- OLDIES, BUT GOODIES ---------- */
+.oldies {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 90px;
+  padding: 60px 20px;
+}
+ 
+.oldies-text {
+  max-width: 300px;
+}
+ 
+.oldies-text h2 {
+  margin-bottom: 22px;
+}
+ 
+.oldies-text p {
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+ 
+.oldies-cards {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+ 
+.oldies-cards .product-card {
+  width: 220px;
+}
+ 
+/* ---------- THE DIRECTOR'S CUT ---------- */
+.directors-cut {
+  position: relative;
+  min-height: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background-image: url(assets/banner2.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+ 
+/* dark layer over the photo */
+.directors-cut::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  opacity: 0.65;
+}
+ 
+.directors-cut-content {
+  position: relative;
+  max-width: 520px;
+  padding: 20px;
+}
+ 
+.directors-cut-content p {
+  font-size: 19px;
+  font-weight: 500;
+  margin: 14px 0 26px;
+}
+ 
+/* ---------- RECENT VIDEOS ---------- */
+.videos {
+  max-width: 945px;
+  margin: 0 auto;
+  padding: 45px 20px 60px;
+}
+ 
+.videos-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 45px;
+}
+ 
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 23px;
+}
+ 
+.video-card img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+ 
+/* video titles are plain text, not the condensed headline style */
+.video-card h3 {
+  font-family: 'Barlow', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 1.8;
+  text-transform: none;
+  margin-top: 12px;
+}
+ 
+.video-card:hover h3 {
+  text-decoration: underline;
+}
+ 
+/* ---------- FOOTER ---------- */
+.site-footer {
+  background-color: white;
+  text-align: center;
+  padding: 25px 20px 40px;
+}
+ 
+.footer-logo {
+  height: 48px;
+  margin: 0 auto 45px;
+}
+ 
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+ 
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+ 
+.footer-links a:hover {
+  text-decoration: underline;
+}
+ 
+.copyright {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-weight: 500;
+}
+ 
+/* ---------- TABLET ---------- */
+@media (max-width: 900px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+ 
+  .process-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+ 
+  .oldies {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+ 
+  .video-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+ 
+/* ---------- MOBILE ---------- */
+@media (max-width: 600px) {
+  .site-header {
+    grid-template-columns: 1fr auto 1fr;
+  }
+ 
+  .header-socials,
+  .main-nav {
+    display: none;
+  }
+ 
+  .hamburger {
+    display: block;
+    justify-self: end;
+    grid-column: 3;
+  }
+ 
+  .logo {
+    grid-column: 2;
+  }
+ 
+  .hero {
+    height: 400px;
+  }
+ 
+  h2 {
+    font-size: 38px;
+  }
+ 
+  .core-four {
+    padding: 40px 16px;
+  }
+ 
+  .oldies-cards {
+    flex-direction: column;
+  }
+ 
+  .videos-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+ 
